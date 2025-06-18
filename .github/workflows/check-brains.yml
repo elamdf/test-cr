@@ -24,6 +24,7 @@ jobs:
         run: git fetch --all
 
       - name: Verify all brain branches are identical
+        # TODO check that crs have been resolved too (i.e. that there are none left)
         run: |
           PR_BRANCH="${{ steps.vars.outputs.pr_branch }}"
           BASE_BRANCH="${{ steps.vars.outputs.base_branch }}"
