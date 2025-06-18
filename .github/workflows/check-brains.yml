@@ -27,7 +27,7 @@ jobs:
         run: |
           PR_BRANCH="${{ steps.vars.outputs.pr_branch }}"
           BASE_BRANCH="${{ steps.vars.outputs.base_branch }}"
-          PREFIX="${BASE_BRANCH}-brain-"
+          PREFIX="${PR_BRANCH}-brain-"
 
           echo "Checking for brain branches matching: ${PREFIX}*"
           BRAIN_BRANCHES=$(git branch -r | grep "origin/${PREFIX}" | sed 's|origin/||')
